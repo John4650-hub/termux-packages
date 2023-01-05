@@ -47,6 +47,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path:  ./upload_debs.zip
+           asset_path:  upload_debs/*.deb
            asset_name: vim.zip
            asset_content_type: application/zip
