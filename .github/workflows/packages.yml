@@ -14,11 +14,12 @@ jobs:
     - run: sudo ./build-package.sh -a arm vim
     - run: ls -a
     - run: ls ./output/
-
+    - run: sudo apt install zip
+    - run: zip -r output.zip output
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
-        path: ./output
+        path: ./output.zip
         retention-days: 30
          
   release:
@@ -47,6 +48,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path:  upload_debs/*.deb
+           asset_path:  upload_debs/output.zip
            asset_name: vim.zip
            asset_content_type: application/zip
