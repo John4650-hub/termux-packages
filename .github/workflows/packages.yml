@@ -14,7 +14,39 @@ jobs:
     - run: sudo ./build-package.sh -a arm vim
     - run: ls -a
     - run: ls ./output/
+
     - uses: actions/upload-artifact@v3
       with:
-        name: upload debs
-        path: ./output
+        name: upload_debs
+        path: /output
+        retention-days: 30
+         
+  release:
+     name: Release debs
+     needs: build-for-arm
+     runs-on: ubuntu-latest
+     steps:
+       - name: Download debs from build
+         uses: actions/download-artifact@v1
+         with:
+           name: upload_debs
+
+       - name: Create Release
+         id: create_release
+         uses: actions/create-release@v1
+         env:
+           GITHUB_TOKEN: ${{ secrets.TK }}
+         with:
+           tag_name: ${{ github.run_number }}
+           release_name: vim v9.0.0
+
+       - name: upload Release debs
+         id: upload_release_assets
+         uses: actions/upload-release-asset@v1.0.1
+         env:
+            GITHUB_TOKEN: ${{ secrets.TK }}
+         with:
+           upload_url: ${{ steps.create_release.outputs.upload_url }}
+           asset_path:  upload_debs/output
+           asset_name: ${{ github.event.repository.name }}.zip
+           asset_content_type: zip
