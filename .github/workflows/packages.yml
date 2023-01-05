@@ -11,7 +11,7 @@ jobs:
     - run: sudo ./scripts/run-docker.sh
     - run: sudo apt install openjdk-8-jdk
     - run: sudo ./scripts/setup-android-sdk.sh
-    - run: sudo ./build-package.sh -a arm git
+    - run: sudo ./build-package.sh -a arm vim
     - run: ls -a
     - run: ls ./debs/
     - uses: actions/upload-artifact@v3
