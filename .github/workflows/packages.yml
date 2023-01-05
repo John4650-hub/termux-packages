@@ -18,7 +18,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
-        path: /output
+        path: ./output
         retention-days: 30
          
   release:
