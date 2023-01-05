@@ -13,8 +13,8 @@ jobs:
     - run: sudo ./scripts/setup-android-sdk.sh
     - run: sudo ./build-package.sh -a arm vim
     - run: ls -a
-    - run: ls ./debs/
+    - run: ls ./output/
     - uses: actions/upload-artifact@v3
       with:
         name: upload debs
-        path: ./debs
+        path: ./output
