@@ -1,6 +1,6 @@
 name: Build packages
 on:
-  puh:
+  push:
     branches: master
 
 jobs:
