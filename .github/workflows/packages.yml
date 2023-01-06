@@ -15,7 +15,7 @@ jobs:
     #- run: sudo rm -rf /usr/local/lib/python2.x
     - run: sudo apt-get install scons gperf autoconf bison
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh -s -a arm docker
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh -s -a arm termux-elf-cleaner
     #- run: sudo apt install openjdk-8-jdk 
     #- run: sudo ./scripts/setup-android-sdk.sh
 
