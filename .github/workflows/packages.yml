@@ -12,6 +12,9 @@ jobs:
     - run: sudo apt install openjdk-8-jdk
     - run: sudo ./scripts/setup-android-sdk.sh
     - run: sudo apt-get install scons gperf autoconf bison
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
     - run: sudo ./build-package.sh -a arm git
     - run: ls -a
     - run: ls ./output/
