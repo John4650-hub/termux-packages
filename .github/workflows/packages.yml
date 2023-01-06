@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: sudo apt install libc6-dev
-    - run: ./configure DFLAGS="-O3"
+    #- run: ./configure DFLAGS="-O3"
     #- run: sudo rm -rf /usr/bin/python2.x
    # - run: sudo rm -rf /usr/lib/python2.x
     #- run: sudo rm -rf /usr/local/lib/python2.x
