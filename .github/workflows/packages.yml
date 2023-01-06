@@ -8,10 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - run: sudo rm -rf /usr/bin/python2.x
+    - run: sudo rm -rf /usr/lib/python2.x
+    - run: sudo rm -rf /usr/local/lib/python2.x
     - run: sudo ./scripts/run-docker.sh
     - run: sudo apt install openjdk-8-jdk
     - run: sudo ./scripts/setup-android-sdk.sh
     - run: sudo apt-get install scons gperf autoconf bison
+
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10' 
