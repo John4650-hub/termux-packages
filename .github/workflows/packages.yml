@@ -8,11 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: sudo apt install libc6-dev
-    #- run: ./configure DFLAGS="-O3"
-    #- run: sudo rm -rf /usr/bin/python2.x
-   # - run: sudo rm -rf /usr/lib/python2.x
-    #- run: sudo rm -rf /usr/local/lib/python2.x
     - run: sudo apt-get install scons gperf autoconf bison
 
     - run: sudo ./scripts/run-docker.sh ./build-package.sh -s -a arm termux-elf-cleaner
