@@ -2,6 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://docker.com
 TERMUX_PKG_DESCRIPTION="Set of products that use OS-level virtualization to deliver software in packages called containers."
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
+TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_VERSION=20.10.22
 LIBNETWORK_COMMIT=dcdf8f176d1e13ad719e913e796fb698d846de98
 DOCKER_GITCOMMIT=3a2c30b
