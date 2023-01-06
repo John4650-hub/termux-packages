@@ -20,7 +20,7 @@ jobs:
     #- run: sudo apt-get install scons gperf autoconf bison
 
    # - uses: actions/setup-python@v4
-    #  with:
+    #  with:bbnn
      #   python-version: '3.10' 
     - run: sudo ./build-package.sh -a arm bash
     - run: ls -a
