@@ -1,6 +1,7 @@
 TERMUX_PKG_HOMEPAGE=https://www.zlib.net/
 TERMUX_PKG_DESCRIPTION="Compression library implementing the deflate compression method found in gzip and PKZIP"
 TERMUX_PKG_LICENSE="ZLIB"
+TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1.2.13
 TERMUX_PKG_SRCURL=https://www.zlib.net/zlib-$TERMUX_PKG_VERSION.tar.xz
