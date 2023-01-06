@@ -36,6 +36,7 @@ share/man/man1/diagtool.1.gz
 share/man/man1/scan-*
 share/scan-*
 "
+TERMUX_PKG_API_LEVEL=23
 TERMUX_SUBPKG_DESCRIPTION="C language frontend for LLVM"
 TERMUX_SUBPKG_DEPENDS="libcompiler-rt, lld, llvm, ndk-sysroot"
 TERMUX_SUBPKG_BREAKS="libllvm (<< 11.0.0-1), clangd"
