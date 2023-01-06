@@ -1,6 +1,6 @@
 name: Build packages
 on:
-  merge:
+  push:
     branches: master
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
     #- run: sudo rm -rf /usr/local/lib/python2.x
     - run: sudo apt-get install scons gperf autoconf bison
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh -a arm nodejs-lts
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh -a arm gzip
     #- run: sudo apt install openjdk-8-jdk 
     #- run: sudo ./scripts/setup-android-sdk.sh
 
