@@ -2,6 +2,7 @@ TERMUX_PKG_HOMEPAGE=https://nodejs.org/
 TERMUX_PKG_DESCRIPTION="Open Source, cross-platform JavaScript runtime environment"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Yaksh Bariya <yakshbari4@gmail.com>"
+TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_VERSION=16.18.1
 TERMUX_PKG_SRCURL=https://nodejs.org/dist/v${TERMUX_PKG_VERSION}/node-v${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=1f8051a88f86f42064f4415fe7a980e59b0a502ecc8def583f6303bc4d445238
