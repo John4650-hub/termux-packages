@@ -22,7 +22,7 @@ jobs:
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip
-    - run: zip -r output.zip output/libllvm*
+    - run: zip -r output.zip output/
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
