@@ -21,3 +21,4 @@ share/opt-viewer
 TERMUX_SUBPKG_DESCRIPTION="LLVM modular compiler and toolchain executables"
 TERMUX_SUBPKG_BREAKS="libllvm (<< 11.0.0-1)"
 TERMUX_SUBPKG_REPLACES="libllvm (<< 11.0.0-1)"
+TERMUX_PKG_API_LEVEL=23
