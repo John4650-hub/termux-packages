@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm libllvm
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm openssl-1.1
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip
