@@ -6,6 +6,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 # scripts/properties.sh
 TERMUX_PKG_VERSION=25b
 TERMUX_PKG_REVISION=3
+TERMUX_PPKG_API_LEVEL=24
 TERMUX_PKG_SRCURL=https://dl.google.com/android/repository/android-ndk-r${TERMUX_PKG_VERSION}-linux.zip
 TERMUX_PKG_SHA256=403ac3e3020dd0db63a848dcaba6ceb2603bf64de90949d5c4361f848e44b005
 # This package has taken over <pty.h> from the previous libutil-dev
