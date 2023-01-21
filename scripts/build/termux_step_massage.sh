@@ -36,8 +36,9 @@ termux_step_massage() {
 	if [ "$TERMUX_PKG_NO_SHEBANG_FIX" != "true" ]; then
 		# Fix shebang paths:
 		while IFS= read -r -d '' file; do
-			head -c 100 "$file" | grep -E "^#!.*/bin/.*" | grep -q -E -v "^#! ?/system" &&
+			if head -c 100 "$file" | head -n 1 | grep -E "^#!.*/bin/.*" | grep -q -E -v "^#! ?/system"; then
 				sed --follow-symlinks -i -E "1 s@^#\!(.*)/bin/(.*)@#\!$TERMUX_PREFIX/bin/\2@" "$file"
+			fi
 		done < <(find -L . -type f -print0)
 	fi
 
@@ -108,8 +109,9 @@ termux_step_massage() {
 		SYMBOLS="$($READELF -s $($TERMUX_HOST_PLATFORM-clang -print-libgcc-file-name) | grep "FUNC    GLOBAL HIDDEN" | awk '{print $8}')"
 		SYMBOLS+=" $(echo libandroid_{sem_{open,close,unlink},shm{ctl,get,at,dt}})"
 		SYMBOLS+=" $(echo backtrace{,_symbols{,_fd}})"
+		SYMBOLS+=" posix_spawn posix_spawnp"
 		grep_pattern="$(create_grep_pattern $SYMBOLS)"
-		for lib in "$(find lib -name "*.so")"; do
+		for lib in $(find lib -name "*.so"); do
 			if ! $READELF -h "$lib" &> /dev/null; then
 				continue
 			fi
