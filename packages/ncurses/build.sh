@@ -7,6 +7,7 @@ TERMUX_PKG_VERSION=(6.4
 		    15
 		    0.26.5
 		    0.9.0)
+TERMUX_PKG_API_LEVEL=24
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=(https://ftp.gnu.org/gnu/ncurses/ncurses-${TERMUX_PKG_VERSION[0]}.tar.gz
 		   https://fossies.org/linux/misc/rxvt-unicode-${TERMUX_PKG_VERSION[1]}.tar.bz2
