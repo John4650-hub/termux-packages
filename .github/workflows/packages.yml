@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh -a arm nodejs
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh -a arm nodejs-lts
     #- run: sudo apt install openjdk-8-jdk 
     #- run: sudo ./scripts/setup-android-sdk.sh
 
