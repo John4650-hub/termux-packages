@@ -9,11 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm remind
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm nodejs-lts
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip
-    - run: zip -r output.zip output/
+    - run: zip -r output.zip output/nodejs-lts*
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
@@ -37,7 +37,7 @@ jobs:
            GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            tag_name: ${{ github.run_number }}
-           release_name: nodejs-lts v16.0.0
+           release_name: nodejs-lts v18.0.0
 
        - name: upload Release debs
          id: upload_release_assets
