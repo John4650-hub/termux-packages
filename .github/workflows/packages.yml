@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm nodejs-lts
+    - run: sudo ./scripts/run-docker.sh ./build-package.sh  -a arm openjdk-17
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip

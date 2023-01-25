@@ -4,7 +4,7 @@ TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Yaksh Bariya <yakshbari4@gmail.com>"
 TERMUX_PKG_VERSION=18.13.0
 TERMUX_PKG_REVISION=1
-TERMUX_PKG_API_LEVEL=23
+TERMUX_PKG_API_LEVEL=24
 TERMUX_PKG_SRCURL=https://nodejs.org/dist/v${TERMUX_PKG_VERSION}/node-v${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=fd4ac562e01d172896e3a959bd59552dbf647331c90d726f8d3471683dd3da68
 # Note that we do not use a shared libuv to avoid an issue with the Android
