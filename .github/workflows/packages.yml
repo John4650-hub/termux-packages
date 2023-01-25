@@ -13,7 +13,7 @@ jobs:
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip
-    - run: zip -r output.zip output/nodejs-lts*
+    - run: zip -r output.zip output/openjdk-17_17.0-25_arm.deb output/libjpeg-turbo_2.1.4_arm.deb output/libiconv_1.17_arm.deb
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
