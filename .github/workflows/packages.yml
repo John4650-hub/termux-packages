@@ -13,7 +13,7 @@ jobs:
     - run: ls -a
     - run: ls ./output/
     - run: sudo apt install zip
-    - run: zip -r output.zip output/openjdk-17_17.0-25_arm.deb output/libjpeg-turbo_2.1.4_arm.deb output/libiconv_1.17_arm.deb
+    - run: zip -r output.zip output/*
     - uses: actions/upload-artifact@v3
       with:
         name: upload_debs
@@ -46,6 +46,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.TK }}
          with:
            upload_url: ${{ steps.create_release.outputs.upload_url }}
-           asset_path:  upload_debs/output.zip
+           asset_path:  ./output.zip
            asset_name: vim.zip
            asset_content_type: application/zip
