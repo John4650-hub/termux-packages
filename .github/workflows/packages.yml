@@ -12,8 +12,9 @@ jobs:
     - run: sudo ./scripts/run-docker.sh
     - run: |
         pwd
-        ls ..
-        ls -a /home/
+        ls ../..
+        ls /home/runner
+        ls /usr -a
     # - run: sudo apt install openjdk-17-jdk
     # - run: |
     #     sudo ./scripts/setup-android-sdk.sh
