@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: sudo apt install libc6-dev
-    - run: sudo ./scripts/setup-ubuntu.sh
+    - run: sudo apt-get install nlohmann-json3-dev
     - run: sudo ./scripts/run-docker.sh
     - run: sudo apt install openjdk-17-jdk
     - run: |
