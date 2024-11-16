@@ -11,33 +11,15 @@ jobs:
     - run: sudo apt install libc6-dev
     - run: sudo ./scripts/run-docker.sh
     - run: sudo apt install openjdk-8-jdk
-    - run: readlink -f $(which java)
+    - run: JAVA_HOME="/usr/lib/jvm/temurin-11-jdk-amd64/bin/java"
     - run: sudo ./scripts/setup-android-sdk.sh
     - run: sudo ./build-package.sh -a arm lisdir
     - run: ls -a
     - run: ls ./output/
-         
-  release:
-     name: Release debs
-     needs: build-for-arm
-     runs-on: ubuntu-latest
-     steps:
-       - name: Download debs from build
-         uses: actions/download-artifact@v1
-         with:
-           name: upload_debs
-
-       - name: Create Release
-         id: create_release
-         uses: actions/create-release@v1
-         env:
-           GITHUB_TOKEN: ${{ secrets.TK }}
-         with:
-           tag_name: ${{ github.run_number }}
-           release_name: nodejs-lts v16.0.0
-       - name: release
-         run: |
-           gh release create ${{ github.run_number}}.0.0 ./output/*
-         env:
-           GITHUB_TOKEN: ${{ secrets.TK }}
+    - name: release
+      run: |
+        gh release create ${{ github.run_number}}.0.0 ./output/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.TK }}
+      shell: bash
    
