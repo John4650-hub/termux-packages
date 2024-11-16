@@ -1,4 +1,3 @@
-sudo apt-get install nlohmann-json3-dev
 TERMUX_PKG_HOMEPAGE=https://github.com/John4650-hub/my-Termux-packs
 TERMUX_PKG_DESCRIPTION="my first package"
 TERMUX_PKG_API_LEVEL=23
