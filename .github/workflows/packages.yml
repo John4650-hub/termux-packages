@@ -9,11 +9,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: sudo apt install libc6-dev
-    - run: sudo apt-get install nlohmann-json3-dev
     - run: sudo ./scripts/run-docker.sh
     - run: sudo apt install openjdk-17-jdk
     - run: |
         sudo ./scripts/setup-android-sdk.sh
+    - run: sudo apt install nlohmann-json3-dev
     - run: sudo ./build-package.sh -a arm lisdir
     - run: ls -a
     - run: ls ./output/
