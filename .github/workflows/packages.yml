@@ -12,6 +12,7 @@ jobs:
     - run: sudo ./scripts/run-docker.sh
     - run: |
         pwd
+        ls ..
         ls -a /home/
     # - run: sudo apt install openjdk-17-jdk
     # - run: |
