@@ -1,5 +1,4 @@
-name: Docker image
-
+name: Docker img
 on:
   pull_request:
     branches:
