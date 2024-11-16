@@ -11,6 +11,7 @@ jobs:
     #- run: sudo apt install libc6-dev
     - run: sudo ./scripts/run-docker.sh
     - run: |
+        sudo apt install nlohmann-json3-dev
         dpkg -L nlohmann-json3-dev
     # - run: sudo apt install openjdk-17-jdk
     # - run: |
