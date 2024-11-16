@@ -94,6 +94,9 @@ PACKAGES+=" gegl"
 # Needed by package libidn2.
 PACKAGES+=" gengetopt"
 
+# Needed by package lisdir
+PACKAGES+=" nlohmann-json3-dev"
+
 # Needed by package dbus-glib.
 PACKAGES+=" libdbus-1-dev"
 
