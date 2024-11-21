@@ -11,7 +11,7 @@ jobs:
     - run: sudo apt install libc6-dev
     # - run: sudo apt install openjdk-17-jdk
     # - run: ./scripts/setup-android-sdk.sh  
-    - run: ./scripts/run-docker.sh ./build-package.sh -a arm lisdir
+    - run: ./scripts/run-docker.sh ./build-package.sh -a arm nlohmann-json
     # - run: |
     #     sudo apt install nlohmann-json3-dev
     - run: ls -a
