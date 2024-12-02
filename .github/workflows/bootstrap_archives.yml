@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Create bootstrap archive
         run: |
-          (./build-bootstrap.sh --help) > logs.txt
+          (build-bootstrap.sh --help) > logs.txt
           #./scripts/generate-bootstraps.sh --architectures ${{ matrix.arch }}
       - name: Store artifacts
         uses: actions/upload-artifact@v3
