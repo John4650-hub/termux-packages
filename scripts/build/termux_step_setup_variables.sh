@@ -1,5 +1,5 @@
 termux_step_setup_variables() {
-	: "${TERMUX_ARCH:="aarch64"}" # arm, aarch64, i686 or x86_64.
+	: "${TERMUX_ARCH:="aarch64"}" # arm, aarch64, i686 or x86_64i.
 	: "${TERMUX_OUTPUT_DIR:="${TERMUX_SCRIPTDIR}/output"}"
 	: "${TERMUX_DEBUG_BUILD:="false"}"
 	: "${TERMUX_FORCE_BUILD:="false"}"
@@ -7,7 +7,7 @@ termux_step_setup_variables() {
 	: "${TERMUX_INSTALL_DEPS:="false"}"
 	: "${TERMUX_PKG_MAKE_PROCESSES:="$(nproc)"}"
 	: "${TERMUX_NO_CLEAN:="false"}"
-	: "${TERMUX_PKG_API_LEVEL:="24"}"
+	: "${TERMUX_PKG_API_LEVEL:="23"}"
 	: "${TERMUX_CONTINUE_BUILD:="false"}"
 	: "${TERMUX_QUIET_BUILD:="false"}"
 	: "${TERMUX_WITHOUT_DEPVERSION_BINDING:="false"}"
