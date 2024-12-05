@@ -1,18 +1,16 @@
 name: Build packages
 on:
-  push:
+  pull_request:
     branches: master
-
 jobs:
   build-for-arm:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - run: ./scripts/run-docker.sh ./build-package.sh -a arm custom_code
-    - run: ls -a
-    - run: ls ./output/
     - name: release
       run: |
+        echo "done"
         gh release create ${{ github.run_number}}.0.0 ./output/*
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
