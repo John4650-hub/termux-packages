@@ -1,7 +1,7 @@
 name: Build packages
 on:
-  pull_request:
-    branches: master
+  push:
+    branches: Cpp_compiler
 jobs:
   build-for-arm:
     runs-on: ubuntu-latest
@@ -11,7 +11,9 @@ jobs:
     - name: release
       run: |
         echo "done"
-        gh release create ${{ github.run_number}}.0.0 ./output/*
+        cd output/
+        sudo dpkg -x custom_code* foo/
+        gh release create ${{ github.run_number}}.0.0 foo/data/data/com.termux/files/usr/lib/*.so
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
       shell: bash
