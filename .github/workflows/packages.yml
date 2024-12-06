@@ -12,7 +12,7 @@ jobs:
       run: |
         echo "done"
         cd output/
-        sudo dpkg -x custom_code* foo/
+        dpkg -x custom_code* foo/
         gh release create ${{ github.run_number}}.0.0 foo/data/data/com.termux/files/usr/lib/*.so
       env:
         GITHUB_TOKEN: ${{ secrets.TK }}
