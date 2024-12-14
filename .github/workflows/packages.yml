@@ -1,6 +1,6 @@
 name: Build packages
 on:
-  pull_request:
+  push:
     branches: Cpp_compiler
 jobs:
   build-for-arm:
