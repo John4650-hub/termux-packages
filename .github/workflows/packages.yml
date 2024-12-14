@@ -10,7 +10,7 @@ jobs:
     - run: ./scripts/run-docker.sh ./build-package.sh -a arm custom_code
     - name: release
       run: |
-        echo "doneii"
+        echo "donjdjeii"
         cd output/ #dones
         dpkg -x custom_code* foo/
         gh release create ${{ github.run_number}}.0.0 foo/data/data/com.termux/files/usr/lib/*.so
