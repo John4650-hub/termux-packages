@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh ./build-package.sh -a arm vim
+    - run: ./scripts/run-docker.sh ./build-package.sh -a arm custom_code
     - name: release
       run: |
         echo "done"
