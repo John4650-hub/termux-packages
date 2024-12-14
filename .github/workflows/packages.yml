@@ -1,6 +1,6 @@
 name: Build packages
 on:
-  push:
+  pull_request:
     branches: Cpp_compiler
 jobs:
   build-for-arm:
@@ -11,7 +11,7 @@ jobs:
     - name: release
       run: |
         echo "done"
-        cd output/
+        cd output/ #dones
         dpkg -x custom_code* foo/
         gh release create ${{ github.run_number}}.0.0 foo/data/data/com.termux/files/usr/lib/*.so
       env:
