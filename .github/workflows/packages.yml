@@ -1,13 +1,13 @@
 name: Build packages
 on:
-  pull_request:
+  push:
     branches: master
 jobs:
   build-for-arm:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh ./build-package.sh -a arm custom_code
+    - run: ./scripts/run-docker.sh ./build-package.sh -a arm libcurl
     - name: release
       run: |
         echo "done"
