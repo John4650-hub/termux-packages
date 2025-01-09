@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh bash -c "sudo apt-get update -y && sudo apt-get install libncurses5-dev libncursesw5-dev && ./build-package.sh -a arm custom_code"
+    - run: ./scripts/run-docker.sh bash -c "ls -a /usr/include && ./build-package.sh -a arm custom_code"
     - name: release
       run: |
         echo "done"
