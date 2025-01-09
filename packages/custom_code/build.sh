@@ -1,4 +1,4 @@
-apt-get install astyle
+sudo apt-get install astyle
 TERMUX_PKG_HOMEPAGE=https://github.com/John4650-hub/my-Termux-packs
 TERMUX_PKG_DESCRIPTION="Justy something i use to create binaries for my codes."
 TERMUX_PKG_API_LEVEL=23
