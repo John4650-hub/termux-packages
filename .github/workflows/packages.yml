@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh sudo apt-get install astyle -y || ./build-package.sh -a arm custom_code
+    - run: ./scripts/run-docker.sh bash -c "sudo apt-get install astyle -y || ./build-package.sh -a arm custom_code"
     - name: release
       run: |
         echo "done"
