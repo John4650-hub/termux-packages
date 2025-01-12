@@ -1,4 +1,6 @@
-latest_tag=$(curl -s https://api.github.com/repos/John4650-hub/my-Termux-packs/releases/latest | jq -r .tag_name)
+
+#latest_tag=$(curl -s https://api.github.com/repos/John4650-hub/my-Termux-packs/releases/latest | jq -r .tag_name)
+latest_tag="154.0.0"
 TERMUX_PKG_HOMEPAGE=https://github.com/John4650-hub/my-Termux-packs
 TERMUX_PKG_DESCRIPTION="Justy something i use to create binaries for my codes.yes"
 TERMUX_PKG_API_LEVEL=23
