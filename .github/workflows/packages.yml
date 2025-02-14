@@ -1,7 +1,7 @@
 name: Build packages
 on:
   push:
-    branches: master
+    branches: masteir
   workflow_dispatch:
 jobs:
   build-for-arm:
