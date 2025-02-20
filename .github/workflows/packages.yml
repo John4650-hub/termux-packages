@@ -1,14 +1,14 @@
 name: Build packages
 on:
   push:
-    branches: masteir
+    branches: master
   workflow_dispatch:
 jobs:
   build-for-arm:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -a arm git"
+    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -a arm toboe"
 
     - name: release
       run: |
