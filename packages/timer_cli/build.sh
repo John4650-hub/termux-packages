@@ -11,5 +11,5 @@ TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true #termux-dowload "https://maven.google.com/com/google/oboe/oboe/1.9.3/oboe-1.9.3.aar"
 ls
 pwd
-echo "$TERMUX__PREFIX/lib"
-ls -a "$TERMUX__PREFIX/lib"
+echo "$TERMUX_PREFIX/lib"
+ls -a "$TERMUX_PREFIX/lib"
