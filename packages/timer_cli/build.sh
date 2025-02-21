@@ -8,8 +8,7 @@ TERMUX_PKG_SHA256=SKIP_CHECKSUM
 TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_BUILD_DEPENDS="ffmpeg, libftxui"
 TERMUX_PKG_BUILD_IN_SRC=true
-TERMUX_PKG_AUTO_UPDATE=true
-termux_dowload "https://maven.google.com/com/google/oboe/oboe/1.9.3/oboe-1.9.3.aar"
+TERMUX_PKG_AUTO_UPDATE=true #termux-dowload "https://maven.google.com/com/google/oboe/oboe/1.9.3/oboe-1.9.3.aar"
 ls
 pwd
 echo "$TERMUX__PREFIX/lib"
