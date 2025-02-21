@@ -21,4 +21,3 @@ curl -L "https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/741.0
 unzip ffmpeg.zip -d dir
 cp dir/my-Termux-packs-741.0.0/src/lib/* "$TERMUX_PREFIX/lib/" -r
 cp -r dir/my-Termux-packs-741.0.0/src/include/* "$TERMUX_PREFIX/include"
-exit 1
