@@ -17,7 +17,7 @@ cp foo/prefab/modules/oboe/libs/android.armeabi-v7a/liboboe.so "$TERMUX_PREFIX/l
 #get headers
 cp -r foo/prefab/modules/oboe/include/oboe "$TERMUX_PREFIX/include"
 
-curl "https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/741.0.0.zip" -o ffmpeg.zip
+curl -L "https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/741.0.0.zip" -o ffmpeg.zip
 unzip ffmpeg.zip -d dir
 cp dir/my-Termux-packs-741.0.0/src/lib/* "$TERMUX_PREFIX/lib/" -r
 cp -r dir/my-Termux-packs-741.0.0/src/include/* "$TERMUX_PREFIX/include"
