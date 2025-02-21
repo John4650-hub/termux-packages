@@ -1,6 +1,5 @@
 TERMUX_PKG_HOMEPAGE=https://github.com/John4650-hub/my-Termux-packs
-TERMUX_PKG_DESCRIPTION="A timer for my personal use"
-TERMUX_PKG_API_LEVEL=23
+TERMUX_PKG_DESCRIPTION="A timer for my personal use" #TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@john4650-hub"
 TERMUX_PKG_VERSION=1.0.0
