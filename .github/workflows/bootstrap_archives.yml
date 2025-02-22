@@ -2,7 +2,7 @@ name: Generate bootstrap archives
 
 on:
   pull-request:
-    branches: [git]
+    branches: [guit]
 
 permissions: {} # none
 
