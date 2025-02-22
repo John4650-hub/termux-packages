@@ -1,4 +1,4 @@
-name: Generate bootstrap archives
+name: Generated bootstrap archives
 
 on:
   pull-request:
