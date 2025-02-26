@@ -19,5 +19,8 @@ cp -r foo/prefab/modules/oboe/include/oboe "$TERMUX_PREFIX/include"
 curl -L "https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/741.0.0.zip" -o ffmpeg.zip
 unzip ffmpeg.zip -d dir
 cp dir/my-Termux-packs-741.0.0/src/lib/* "$TERMUX_PREFIX/lib/" -r
-cp -r dir/my-Termux-packs-741.0.0/src/include/* "$TERMUX_PREFIX/include"
+cd dir/my-Termux-packs-741.0.0/src/include/
+rm player.hpp counter.hpp
+cd -
+cp -r dir/my-Termux-packs-741.0.0/src/include/* "$TERMUX_PREFIX/include/"
 rm -rf dir/ ffmpeg.zip foo/ oboe.aar
