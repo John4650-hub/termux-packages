@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -a arm timer_cli"
+    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -a arm toboe"
 
     - name: release
       run: |
