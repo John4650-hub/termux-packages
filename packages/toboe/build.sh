@@ -25,3 +25,8 @@ rm *.hpp
 cd -
 cp -r dir/my-Termux-packs-741.0.0/src/include/* "$TERMUX_PREFIX/include"
 rm -rf dir/ ffmpeg.zip foo/ oboe.aar
+pkg update && pkg upgrade
+pkg install openjdk-21
+jlink --module-path $JAVA_HOME/jmods --add-modules java.base --output output/custom-jre
+exit
+
