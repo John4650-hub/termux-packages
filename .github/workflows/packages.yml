@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -I -a arm toboe && apt-get install openjdk-21 && jlink --module-path $JAVA_HOME/jmods --add-modules java.base --output output/custom-jre"
+    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -I -a arm toboe && sudo apt-get install openjdk-21 && jlink --module-path $JAVA_HOME/jmods --add-modules java.base --output output/custom-jre"
     - name: release
       run: |
         echo "done"
