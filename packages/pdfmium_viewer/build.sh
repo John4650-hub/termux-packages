@@ -12,7 +12,7 @@ TERMUX_PKG_AUTO_UPDATE=true
 
 curl -L "https://github.com/bblanchon/pdfium-binaries/releases/latest/download/pdfium-android-arm.tgz" -o pdfium-android-arm.tgz
 mkdir foo/ && cd foo
-tar -x ../pdfium-android-arm.tgz
+tar -xvzf ../pdfium-android-arm.tgz
 cd ..
 # get lib
 cp foo/lib/libpdfium.so "$TERMUX_PREFIX/lib"
