@@ -18,4 +18,4 @@ cd ..
 cp foo/lib/libpdfium.so "$TERMUX_PREFIX/lib"
 # get headers
 # ok
-cp -r foo/include "$TERMUX_PREFIX/include"
+cp -r foo/include/* "$TERMUX_PREFIX/include"
