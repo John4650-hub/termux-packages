@@ -31,7 +31,7 @@ cp -r opencv-mobile-2.4.13.7-android/sdk/native/jni/include/* "$TERMUX_INCLUDE_D
 cp -r opencv-mobile-2.4.13.7-android/sdk/native/libs/armeabi-v7a/* "$TERMUX_LIB_DIR"
 
 #get libomp.a //depended on by opencv
-curl -L "https://grimler.se/termux-ma,in/pool/main/c/clang/clang_20.1.2_arm.deb" -o llvm.deb
+curl -L "https://grimler.se/termux-main/pool/main/c/clang/clang_20.1.2_arm.deb" -o llvm.deb
 dpkg -x llvm.deb llvm
 cp llvm/data/data/com.termux/files/usr/lib/libomp.a "$TERMUX_LIB_DIR"
 
