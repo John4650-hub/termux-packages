@@ -51,3 +51,20 @@ cd argparse
 curl -LO "https://raw.githubusercontent.com/p-ranav/argparse/refs/heads/master/include/argparse/argparse.hpp"
 cd ..
 cp -r argparse "$TERMUX_INCLUDE_DIR/"
+
+#get webp
+curl -L "https://grimler.se/termux-main/pool/main/libw/libwebp/libwebp_1.5.0_arm.deb" -o webp.deb
+dpkg -x webp.deb webp
+cp -r webp/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+
+#get jpeg
+curl -L "https://grimler.se/termux-main/pool/main/libj/libjpeg-turbo-static/libjpeg-turbo-static_3.1.0_arm.deb" -o jpeg.deb
+dpkg -x jpeg.deb jpeg
+cp -r jpeg/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+
+#get openjpeg
+curl -L "https://grimler.se/termux-main/pool/main/o/openjpeg/openjpeg_2.5.3_arm.deb" -o ojpeg.deb
+dpkg -x ojpeg.deb ojpeg
+cp -r ojpeg/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+
+
