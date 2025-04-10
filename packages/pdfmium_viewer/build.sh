@@ -45,3 +45,9 @@ curl -L "https://grimler.se/termux-main/pool/main/l/leptonica-static/leptonica-s
 dpkg -x leptonica.deb leptonica
 cp -r leptonica/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
 
+#get argparse
+mkdir argparse
+cd argparse
+curl -LO "https://raw.githubusercontent.com/p-ranav/argparse/refs/heads/master/include/argparse/argparse.hpp"
+cd ..
+cp -r argparse "$TERMUX_INCLUDE_DIR/"
