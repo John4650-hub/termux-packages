@@ -27,5 +27,5 @@ cp -r foo/include/* "$TERMUX_INCLUDE_DIR"
 
 curl -LO "https://github.com/nihui/opencv-mobile/releases/download/v32/opencv-mobile-2.4.13.7-android.zip"
 unzip "opencv-mobile-2.4.13.7-android.zip" -d ./
-cp -r opencv-mobile-2.4.13.7-android/sdk/native/jni/include/* "$TERMUX_INCLUDES_DIR"
+cp -r opencv-mobile-2.4.13.7-android/sdk/native/jni/include/* "$TERMUX_INCLUDE_DIR"
 cp -r opencv-mobile-2.4.13.7-android/sdk/native/libs/armeabi-v7a/* "$TERMUX_LIB_DIR"
