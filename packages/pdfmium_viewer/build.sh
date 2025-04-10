@@ -22,7 +22,7 @@ cd ..
 cp foo/lib/libpdfium.so "$TERMUX_LIB_DIR"
 # get headers
 # ok
-cp -r foo/include/* "$TERMUX_INCLUDES_DIR"
+cp -r foo/include/* "$TERMUX_INCLUDE_DIR"
 # get opencv
 
 curl -LO "https://github.com/nihui/opencv-mobile/releases/download/v32/opencv-mobile-2.4.13.7-android.zip"
