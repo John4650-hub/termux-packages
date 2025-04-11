@@ -4,7 +4,6 @@ TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="5.5.0"
 TERMUX_PKG_REVISION=2
-TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_SRCURL=https://github.com/tesseract-ocr/tesseract/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=f2fb34ca035b6d087a42875a35a7a5c4155fa9979c6132365b1e5a28ebc3fc11
 TERMUX_PKG_AUTO_UPDATE=true
@@ -20,7 +19,6 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -DOPENMP_BUILD=ON
 -DLEPT_TIFF_RESULT=0
 "
-
 termux_step_post_get_source() {
 	# Do not forget to bump revision of reverse dependencies and rebuild them
 	# after SOVERSION is changed.
