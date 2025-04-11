@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -I -a arm tesseract"
+    - run: ./scripts/run-docker.sh bash -c "./build-package.sh -a arm tesseract"
     - name: release
       run: |
         echo "donei"
