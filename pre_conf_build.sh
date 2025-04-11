@@ -9,7 +9,7 @@ build_script_paths=("$JOHN_PKG_BUILD_SCRIPT")
 exclude_these_script=("fontconfig")
 for dep_ in "${dep_array[@]}"; do
   dep_=$(echo "$dep_" | xargs) #remove white space from beginning
-  if [[ "${exclude_these_script[@]}" =~ " $dep_ "]]; then
+  if [[ "${exclude_these_script[@]}" =~ " $dep_ " ]]; then
     continue
   fi
   find_exact_path=$(find "./packages/$dep_" -type f -name "build.sh")
@@ -17,7 +17,7 @@ for dep_ in "${dep_array[@]}"; do
 done
 add_script=$(echo "
 termux_step_pre_configure() {
-        LDFLAGS+=\"-static-libgcc -static-libstdc++\"
+        LDFLAGS+=\"-static -static-libgcc -static-libstdc++\"
 }
 ")
 for p in "${build_script_paths[@]}";do
