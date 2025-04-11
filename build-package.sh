@@ -282,6 +282,7 @@ source "$TERMUX_SCRIPTDIR/scripts/build/termux_step_replace_guess_scripts.sh"
 
 # For package scripts to override. Called in $TERMUX_PKG_BUILDDIR.
 termux_step_pre_configure() {
+  LDFLAGS+="-static-libgcc -static-libstdc++"
 	return
 }
 
@@ -686,6 +687,7 @@ for ((i=0; i<${#PACKAGE_LIST[@]}; i++)); do
 			cd "$TERMUX_PKG_SRCDIR"
 			termux_step_pre_configure
 		fi
+
 
 		# Even on continued build we might need to setup paths
 		# to tools so need to run part of configure step
