@@ -14,7 +14,7 @@ for dep_ in "${dep_array[@]}"; do
 done
 add_script=$(echo "
 termux_step_pre_configure() {
-        LDFLAGS+=\"-static-libgcc -static-libstdc++ -fopenmp -static-openmp -landroid-posix-semaphore\"
+        LDFLAGS+=\"-static-libgcc -static-libstdc++\"
 }
 ")
 for p in "${build_script_paths[@]}";do
