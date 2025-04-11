@@ -13,7 +13,7 @@ TERMUX_PKG_BREAKS="libarchive-dev"
 TERMUX_PKG_REPLACES="libarchive-dev"
 
 termux_step_pre_configure() {
-        LDFLAGS+="-static -static-libgcc -static-libstdc++"
+        LDFLAGS+=" -L$TERMUX_PREFIX -static -static-libgcc -static-libstdc++"
 }
 
 
@@ -43,3 +43,6 @@ termux_step_post_make_install() {
 	sed -i '/^Requires\.private:/s/ iconv//' \
 		$TERMUX_PREFIX/lib/pkgconfig/libarchive.pc
 }
+curl -L "https://grimler.se/termux-main/pool/main/libx/libxml2/libxml2_2.13.7_arm.deb" -o xml2.deb
+dpkg -x xml2.deb xml2
+cp -r xml2/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
