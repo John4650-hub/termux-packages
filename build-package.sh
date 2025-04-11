@@ -282,7 +282,6 @@ source "$TERMUX_SCRIPTDIR/scripts/build/termux_step_replace_guess_scripts.sh"
 
 # For package scripts to override. Called in $TERMUX_PKG_BUILDDIR.
 termux_step_pre_configure() {
-  LDFLAGS+="-static-libgcc -static-libstdc++"
 	return
 }
 
