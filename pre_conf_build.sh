@@ -19,3 +19,4 @@ termux_step_pre_configure() {
 for p in "${build_script_paths[@]}";do
   echo "$add_script" >> "$p"
 done
+
