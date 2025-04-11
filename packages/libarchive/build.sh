@@ -10,6 +10,11 @@ TERMUX_PKG_DEPENDS="libbz2, libiconv, liblzma, libxml2, openssl, zlib"
 TERMUX_PKG_BREAKS="libarchive-dev"
 TERMUX_PKG_REPLACES="libarchive-dev"
 
+termux_step_pre_configure() {
+        LDFLAGS+="-static -static-libgcc -static-libstdc++"
+}
+
+
 # --without-nettle to use openssl instead:
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --without-nettle
