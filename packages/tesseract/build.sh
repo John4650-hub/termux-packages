@@ -33,7 +33,7 @@ termux_step_post_get_source() {
 }
 
 termux_step_pre_configure() {
-	LDFLAGS+=" -fopenmp -static-openmp -landroid-posix-semaphore"
+	LDFLAGS+="-static-libgcc -static-libstdc++ -fopenmp -static-openmp -landroid-posix-semaphore"
 }
 
 termux_step_post_make_install() {
