@@ -8,6 +8,7 @@ IFS="," read -r -a dep_array <<< "$JOHN_PKG_DEPENDS"
 build_script_paths=("$JOHN_PKG_BUILD_SCRIPT")
 
 for dep_ in "${dep_array[@]}"; do
+  dep_=$(echo "$dep_" | xargs) #remove white space from beginning
   find_exact_path=$(find "./packages/$dep_" -type f -name "build.sh")
   build_script_paths+="$find_exact_path"
 done
