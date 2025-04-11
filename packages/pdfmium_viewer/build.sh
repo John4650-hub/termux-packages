@@ -36,12 +36,13 @@ dpkg -x llvm.deb llvm
 cp llvm/data/data/com.termux/files/usr/lib/libomp.a "$TERMUX_LIB_DIR"
 
 #get tesseract
-curl -L "https://grimler.se/termux-main/pool/main/t/tesseract/tesseract_5.5.0-2_arm.deb" -o tesseract.deb
+#https://grimler.se/termux-main-21/pool/main/l/leptonica/
+curl -L "https://grimler.se/termux-main-21/pool/main/t/tesseract/tesseract_4.1.0-2_arm.deb" -o tesseract.deb
 dpkg -x tesseract.deb tesseract
 cp -r tesseract/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
 
 #get leptonica
-curl -L "https://grimler.se/termux-main/pool/main/l/leptonica-static/leptonica-static_1.85.0_arm.deb" -o leptonica.deb
+curl -L "https://grimler.se/termux-main-21/pool/main/l/leptonica/leptonica_1.78.0-4_arm.deb" -o leptonica.deb
 dpkg -x leptonica.deb leptonica
 cp -r leptonica/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
 
