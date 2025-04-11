@@ -3,20 +3,7 @@ name: Vagrant
 on:
   push:
     branches:
-    - master
-    - dev
-    - 'dev/**'
-    paths:
-    - '.github/workflows/vagrant.yml'
-    - 'scripts/Vagrantfile'
-  pull_request:
-    paths:
-    - '.github/workflows/vagrant.yml'
-    - 'scripts/Vagrantfile'
-  schedule:
-    # approx biweekly
-    - cron: '0 0 7,28 * *'
-  workflow_dispatch:
+    - mastoeri
 
 permissions: {} # none
 
@@ -53,10 +40,8 @@ jobs:
           echo "ERROR: No files found in output dir" 1>&2
           exit 1
         fi
-
         mkdir -p artifacts debs
         find output -name "*.deb" -type f -print0 | xargs -0r mv -t debs/
-
         # Files containing certain symbols (e.g. ":") will cause failure in actions/upload-artifact.
         # Archiving *.deb files in a tarball to avoid issues with uploading.
         tar cf artifacts/debs-${{ github.sha }}.tar debs
