@@ -8,7 +8,7 @@ TERMUX_PKG_SRCURL=https://github.com/libarchive/libarchive/releases/download/v$T
 TERMUX_PKG_SHA256=aa90732c5a6bdda52fda2ad468ac98d75be981c15dde263d7b5cf6af66fd009f
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_DEPENDS="libbz2, libiconv, liblzma, libxml2, openssl, zlib"
-TERMUX_PKG_BUILD_DEPENDS="libc++, libcpufeatures, libxml2, liblzma, libiconv, libbz2, openssl, zlib"
+TERMUX_PKG_BUILD_DEPENDS="libc++, libcpufeatures, libxml2, liblzma, libiconv, libbz2, openssl, zlib, libarchive"
 TERMUX_PKG_BREAKS="libarchive-dev"
 TERMUX_PKG_REPLACES="libarchive-dev"
 
