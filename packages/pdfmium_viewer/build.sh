@@ -29,3 +29,10 @@ mkdir argparse
  curl -LO "https://raw.githubusercontent.com/p-ranav/argparse/refs/heads/master/include/argparse/argparse.hpp"
  cd ..
  cp -r argparse "$TERMUX_INCLUDE_DIR/"
+
+curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf/mupdf_1.16.1-1_arm.deb"
+dpkg -x mupdf_1.16.1-1_arm.deb mupdf/
+cp -r mupdf/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf-static/mupdf-static_1.16.1-1_arm.deb"
+dpkg -x mupdf-static_1.16.1-1_arm.deb mupdf_static
+cp -r mupdf_static/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
