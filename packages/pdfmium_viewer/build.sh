@@ -23,4 +23,9 @@ cp -r foo/lib/ "$TERMUX_PREFIX"
 # get headers
 # ok
 cp -r foo/include "$TERMUX_PREFIX"
-# get opencv
+
+mkdir argparse
+ cd argparse
+ curl -LO "https://raw.githubusercontent.com/p-ranav/argparse/refs/heads/master/include/argparse/argparse.hpp"
+ cd ..
+ cp -r argparse "$TERMUX_INCLUDE_DIR/"
