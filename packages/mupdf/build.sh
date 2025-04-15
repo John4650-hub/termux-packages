@@ -17,10 +17,9 @@ termux_step_post_get_source() {
 	mv pyproject.toml{,.unused}
 	mv setup.py{,.unused}
 	sed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" $TERMUX_PKG_SRCDIR/Makerules
-  sed "1 a\
-LDFLAGS+=\" -llog -static-libgcc -static-libstdc++ -Wl,$TERMUX_PREFIX/lib/libbackport.a\"" $TERMUX_PKG_SRCDIR/Makerules
-
-
+  sed "212i\
+long ftello(FILE *stream) { return (long)ftell(stream);}\
+int fseeko(FILE *stream, off_t offset, int whence) {return fseek(stream, (long)offset, whence);}" /home/builder/.termux-build/_cache/android-r27c-api-23-v1/bin/../sysroot/usr/include/stdio.h
 }
 
 termux_step_pre_configure() {
@@ -33,6 +32,7 @@ termux_step_post_make_install() {
 	termux_step_make
 	install -Dm600 -t $TERMUX_PREFIX/lib build/release*/libmupdf{-third,}.a
 	ln -sf $TERMUX_PREFIX/lib/libmupdf.so.* $TERMUX_PREFIX/lib/libmupdf.so
+
 }
 curl -LO "https://github.com/John4650-hub/termux-packages/releases/download/1173.0.0/backport-static_1.0.0-1_arm.deb"
 dpkg -x backport-static_1.0.0-1_arm.deb backport
