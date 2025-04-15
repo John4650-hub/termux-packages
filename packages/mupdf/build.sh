@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Lightweight PDF and XPS viewer (library)"
 TERMUX_PKG_LICENSE="AGPL-V3"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.24.10"
+TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_SRCURL=https://mupdf.com/downloads/archive/mupdf-${TERMUX_PKG_VERSION}-source.tar.gz
 TERMUX_PKG_SHA256=939285b5f97caf770fd46cbe7e6cc3a695ab19bb5bfaf5712904549cef390b7b
 TERMUX_PKG_EXTRA_MAKE_ARGS="prefix=$TERMUX_PREFIX build=release libs shared=no tesseract=no V=1"
@@ -30,4 +31,6 @@ termux_step_post_make_install() {
 	install -Dm600 -t $TERMUX_PREFIX/lib build/release*/libmupdf{-third,}.a
 	ln -sf $TERMUX_PREFIX/lib/libmupdf.so.* $TERMUX_PREFIX/lib/libmupdf.so
 }
-
+curl -LO "https://github.com/John4650-hub/termux-packages/releases/download/1173.0.0/backport-static_1.0.0-1_arm.deb"
+dpkg -x backport-static_1.0.0-1_arm.deb backport
+cp -r backport/data/data/com.termux/files/usr/lib $TERMUX_PREFIX
