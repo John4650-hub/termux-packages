@@ -1,8 +1,8 @@
 TERMUX_PKG_HOMEPAGE=https://github.com/termux/play-audio
-TERMUX_PKG_DESCRIPTION="Simple simple command line audio player for Android"
+TERMUX_PKG_DESCRIPTION="Backporting some functions missing on android 6.0.1"
 TERMUX_PKG_LICENSE="Apache-2.0"
-TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=0.6
+TERMUX_PKG_MAINTAINER="@john4650-hub"
+TERMUX_PKG_VERSION=1.0.0
 TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/$(curl -s https://api.github.com/repos/John4650-hub/my-Termux-packs/releases/latest | jq -r .tag_name).tar.gz
