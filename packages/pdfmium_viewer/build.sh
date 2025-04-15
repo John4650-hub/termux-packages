@@ -30,9 +30,12 @@ mkdir argparse
  cd ..
  cp -r argparse "$TERMUX_INCLUDE_DIR/"
 
-curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf/mupdf_1.16.1-1_arm.deb"
-dpkg -x mupdf_1.16.1-1_arm.deb mupdf/
-cp -r mupdf/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+curl -LO "https://github.com/John4650-hub/Hello-Android-CI/releases/download/0.1285.0/out.zip"
+unzip out.zip mupdf/
+cp -r mupdf/out/* "$TERMUX_PREFIX"
+
 curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf-static/mupdf-static_1.16.1-1_arm.deb"
 dpkg -x mupdf-static_1.16.1-1_arm.deb mupdf_static
 cp -r mupdf_static/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+
+
