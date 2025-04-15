@@ -17,10 +17,9 @@ termux_step_post_get_source() {
 	mv pyproject.toml{,.unused}
 	mv setup.py{,.unused}
 	sed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" $TERMUX_PKG_SRCDIR/Makerules
-  cat "$TERMUX_PKG_SRCDIR/source/fitz/output.c"
-  sed "212i\
+  sed "40 a\
 long ftello(FILE *stream) { return (long)ftell(stream);}\
-int fseeko(FILE *stream, off_t offset, int whence) {return fseek(stream, (long)offset, whence);}" /home/builder/.termux-build/_cache/android-r27c-api-23-v1/bin/../sysroot/usr/include/stdio.h
+int fseeko(FILE *stream, off_t offset, int whence) {return fseek(stream, (long)offset, whence);}" "$TERMUX_PKG_SRCDIR/source/fitz/output.c"
 }
 
 termux_step_pre_configure() {
