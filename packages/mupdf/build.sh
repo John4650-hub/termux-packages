@@ -8,7 +8,7 @@ TERMUX_PKG_SRCURL=https://mupdf.com/downloads/archive/mupdf-${TERMUX_PKG_VERSION
 TERMUX_PKG_SHA256=939285b5f97caf770fd46cbe7e6cc3a695ab19bb5bfaf5712904549cef390b7b
 TERMUX_PKG_EXTRA_MAKE_ARGS="prefix=$TERMUX_PREFIX build=release libs shared=no tesseract=no V=1"
 TERMUX_PKG_BUILD_IN_SRC=true
-TERMUX_PKG_BUILD_DEPENDS="openjpeg, freetype, freeglut, harfbuzz,jbig2dec,libc++"
+TERMUX_PKG_BUILD_DEPENDS="openjpeg, freetype, freeglut, harfbuzz, jbig2dec, libc++, glib"
 
 # Automatic updates break k2pdfopt on regular basis
 TERMUX_PKG_AUTO_UPDATE=false
