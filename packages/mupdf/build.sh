@@ -17,12 +17,15 @@ termux_step_post_get_source() {
 	mv pyproject.toml{,.unused}
 	mv setup.py{,.unused}
 	sed -i "s/HAVE_OBJCOPY := yes/HAVE_OBJCOPY := no/g" $TERMUX_PKG_SRCDIR/Makerules
+  sed "1 a\
+LDFLAGS+=\" -llog -static-libgcc -static-libstdc++ -Wl,$TERMUX_PREFIX/lib/libbackport.a\"" $TERMUX_PKG_SRCDIR/Makerules
+
+
 }
 
 termux_step_pre_configure() {
 	rm -rf thirdparty/{freeglut,freetype,harfbuzz,jbig2dec,leptonica,libjpeg,openjpeg,tesseract,zlib}
 	export USE_SYSTEM_LIBS=yes
-	LDFLAGS+=" -llog -static-libgcc -static-libstdc++ -Wl,$TERMUX_PREFIX/lib/libbackport.a"
 }
 
 termux_step_post_make_install() {
