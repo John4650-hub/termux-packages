@@ -22,7 +22,7 @@ termux_step_post_get_source() {
 termux_step_pre_configure() {
 	rm -rf thirdparty/{freeglut,freetype,harfbuzz,jbig2dec,leptonica,libjpeg,openjpeg,tesseract,zlib}
 	export USE_SYSTEM_LIBS=yes
-	LDFLAGS+=" -llog -static-libgcc -static-libstdc++"
+	LDFLAGS+=" -llog -static-libgcc -static-libstdc++ -Wl,$TERMUX_PREFIX/lib/libbackport.a"
 }
 
 termux_step_post_make_install() {
