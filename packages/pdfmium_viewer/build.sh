@@ -10,7 +10,7 @@ TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_DEPENDS="libpng"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_BUILD_DEPENDS="freetype, harfbuzz"
+TERMUX_PKG_BUILD_DEPENDS="openjpeg, freetype, freeglut, harfbuzz, jbig2dec, gumbo-parser"
 TERMUX_INCLUDE_DIR="$TERMUX_PREFIX/include"
 TERMUX_LIB_DIR="$TERMUX_PREFIX/lib"
 #download pdfium-no-v8
