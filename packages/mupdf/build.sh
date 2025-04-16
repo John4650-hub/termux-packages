@@ -1,3 +1,5 @@
+echo $DOCKER_EXEC_PID_FILE_PATH
+exit 0
 TERMUX_PKG_HOMEPAGE=https://mupdf.com/
 TERMUX_PKG_DESCRIPTION="Lightweight PDF and XPS viewer (library)"
 TERMUX_PKG_LICENSE="AGPL-V3"
