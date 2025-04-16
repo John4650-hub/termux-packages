@@ -10,7 +10,6 @@ TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_DEPENDS="libpng"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_BUILD_DEPENDS="openjpeg, freetype, freeglut, harfbuzz, jbig2dec, gumbo-parser"
 TERMUX_INCLUDE_DIR="$TERMUX_PREFIX/include"
 TERMUX_LIB_DIR="$TERMUX_PREFIX/lib"
 #download pdfium-no-v8
@@ -33,5 +32,10 @@ mkdir argparse
 curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf-static/mupdf-static_1.16.1-1_arm.deb"
 dpkg -x mupdf-static_1.16.1-1_arm.deb mupdf_static
 cp -r mupdf_static/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
+deps=("https://grimler.se/termux-main-21/pool/main/o/openjpeg/openjpeg_2.3.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/f/freetype/freetype_2.10.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/h/harfbuzz/harfbuzz_2.6.4-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/j/jbig2dec/jbig2dec_0.17-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/g/gumbo-parser/gumbo-parser_0.10.1-1_arm.deb")
 
-
+for url in ${deps[@]}; do
+  curl -L $url -o dep.deb
+  dpkg -x dep.deb dep
+  cp -r "dep$TERMUX_PREFIX" "$TERMUX_PREFIX"
+  rm -r dep
