@@ -39,5 +39,4 @@ for url in ${deps[@]}; do
   curl -L $url -o depz.deb
   dpkg -x depz.deb dep
 done
-ls -R dep/
-cp -r "dep/data/data/com.termux/files/usr/*" "$TERMUX_PREFIX"
+cp -r dep/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
