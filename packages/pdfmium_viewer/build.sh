@@ -37,6 +37,5 @@ deps=("https://grimler.se/termux-main-21/pool/main/o/openjpeg/openjpeg_2.3.1-2_a
 for url in ${deps[@]}; do
   curl -L $url -o dep.deb
   dpkg -x dep.deb dep
-  cp -r "dep$TERMUX_PREFIX" "$TERMUX_PREFIX"
-  rm -r dep
 done
+cp -r "dep/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
