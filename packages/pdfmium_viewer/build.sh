@@ -34,8 +34,10 @@ dpkg -x mupdf-static_1.16.1-1_arm.deb mupdf_static
 cp -r mupdf_static/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
 deps=("https://grimler.se/termux-main-21/pool/main/o/openjpeg/openjpeg_2.3.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/f/freetype/freetype_2.10.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/h/harfbuzz/harfbuzz_2.6.4-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/j/jbig2dec/jbig2dec_0.17-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/g/gumbo-parser/gumbo-parser_0.10.1-1_arm.deb")
 
+mkdir dep
 for url in ${deps[@]}; do
-  curl -L $url -o dep.deb
-  dpkg -x dep.deb dep
+  curl -L $url -o depz.deb
+  dpkg -x depz.deb dep
 done
+ls -R dep/
 cp -r "dep/data/data/com.termux/files/usr/*" "$TERMUX_PREFIX"
