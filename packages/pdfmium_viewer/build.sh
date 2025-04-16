@@ -12,7 +12,7 @@ TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_INCLUDE_DIR="$TERMUX_PREFIX/include"
 TERMUX_LIB_DIR="$TERMUX_PREFIX/lib"
-TERMUX_PKG_BUILD_DEPENDS="zlib"
+TERMUX_PKG_BUILD_DEPENDS="zlib, libandroid-support, libandroid-posix-semaphore"
 #download pdfium-no-v8
 curl -L "https://github.com/bblanchon/pdfium-binaries/releases/latest/download/pdfium-android-arm.tgz" -o pdfium-android-arm.tgz
 mkdir foo/ && cd foo
