@@ -1,4 +1,5 @@
 echo $DOCKER_EXEC_PID_FILE_PATH
+docker inspect --format '{{.State.Pid}}' termux-package-builder
 exit 0
 TERMUX_PKG_HOMEPAGE=https://mupdf.com/
 TERMUX_PKG_DESCRIPTION="Lightweight PDF and XPS viewer (library)"
