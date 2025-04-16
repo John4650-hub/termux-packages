@@ -39,3 +39,4 @@ for url in ${deps[@]}; do
   dpkg -x dep.deb dep
   cp -r "dep$TERMUX_PREFIX" "$TERMUX_PREFIX"
   rm -r dep
+done
