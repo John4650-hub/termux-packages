@@ -8,11 +8,11 @@ TERMUX_PKG_SRCURL=https://github.com/John4650-hub/my-Termux-packs/archive/refs/t
 TERMUX_PKG_SHA256=SKIP_CHECKSUM
 TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_DEPENDS="libpng"
+TERMUX_PKG_BUILD_DEPENDS="libpng"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_INCLUDE_DIR="$TERMUX_PREFIX/include"
 TERMUX_LIB_DIR="$TERMUX_PREFIX/lib"
-TERMUX_PKG_BUILD_DEPENDS="libandroid-support, libandroid-posix-semaphore, libc++"
 #download pdfium-no-v8
 curl -L "https://github.com/bblanchon/pdfium-binaries/releases/latest/download/pdfium-android-arm.tgz" -o pdfium-android-arm.tgz
 mkdir foo/ && cd foo
@@ -30,14 +30,5 @@ mkdir argparse
  cd ..
  cp -r argparse "$TERMUX_INCLUDE_DIR/"
 
-curl -LO "https://grimler.se/termux-main-21/pool/main/m/mupdf-static/mupdf-static_1.16.1-1_arm.deb"
-dpkg -x mupdf-static_1.16.1-1_arm.deb mupdf_static
-cp -r mupdf_static/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
-deps=("https://grimler.se/termux-main-21/pool/main/o/openjpeg/openjpeg_2.3.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/f/freetype/freetype_2.10.1-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/h/harfbuzz/harfbuzz_2.6.4-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/j/jbig2dec/jbig2dec_0.17-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/g/gumbo-parser/gumbo-parser_0.10.1-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/z/zlib/zlib_1.2.11-2_arm.deb" "https://grimler.se/termux-main-21/pool/main/libj/libjpeg-turbo/libjpeg-turbo_2.0.3-1_arm.deb" "https://grimler.se/termux-main-21/pool/main/m/mupdf/mupdf_1.16.1-1_arm.deb")
+curl -L "https://github.com/JamyJones/Heavy-runner/releases/download/0.1293.0/libMuPDF.so" -o "$TERMUX_PREFIX/lib/libmupdf.so"
 
-mkdir dep
-for url in ${deps[@]}; do
-  curl -L $url -o depz.deb
-  dpkg -x depz.deb dep
-done
-cp -r dep/data/data/com.termux/files/usr/* "$TERMUX_PREFIX"
