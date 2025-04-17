@@ -6,9 +6,7 @@ TERMUX_PKG_VERSION=1.0.0
 TERMUX_PKG_API_LEVEL=23
 TERMUX_PKG_SRCURL=https://github.com/John4650-hub/my-Termux-packs/archive/refs/tags/$(curl -s https://api.github.com/repos/John4650-hub/my-Termux-packs/releases/latest | jq -r .tag_name).tar.gz
 TERMUX_PKG_SHA256=SKIP_CHECKSUM
-TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_DEPENDS="libpng"
-TERMUX_PKG_BUILD_DEPENDS="libpng"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_INCLUDE_DIR="$TERMUX_PREFIX/include"
@@ -29,6 +27,4 @@ mkdir argparse
  curl -LO "https://raw.githubusercontent.com/p-ranav/argparse/refs/heads/master/include/argparse/argparse.hpp"
  cd ..
  cp -r argparse "$TERMUX_INCLUDE_DIR/"
-
-curl -L "https://github.com/JamyJones/Heavy-runner/releases/download/0.1293.0/libMuPDF.so" -o "$TERMUX_PREFIX/lib/libmupdf.so"
 
